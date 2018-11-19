@@ -1,0 +1,57 @@
+create table usuario
+(
+no_usuario int not null identity,
+nombres varchar(100) not null,
+apellidos varchar(100) not null,
+usuario varchar(100) not null primary key,
+contrasena varchar(255) not null,
+usuario_role varchar(100) not null
+);
+
+create table medico
+(
+no_medico int not null primary key identity,
+usuario_medico varchar(100) foreign key references usuario(usuario),
+especialidad varchar(50),
+fecha_nacimiento date,
+genero varchar(5)
+);
+
+create table paciente
+(
+id_paciente int not null primary key,
+nombres varchar(100) not null,
+apellidos varchar(100) not null,
+telefono varchar(50),
+tipo_sangre varchar(5),
+genero varchar(10),
+ocupacion varchar(255),
+fecha_nacimiento date,
+direccion varchar(255),
+no_medico int not null foreign key references medico(no_medico),
+informacion varchar(255),
+usuario_creador varchar(100) not null foreign key references usuario(usuario),
+fecha_hora_creacion datetime not null
+);
+
+create table cita
+(
+no_cita int not null primary key identity,
+id_paciente int not null foreign key references paciente(id_paciente),
+medico int not null foreign key references medico(no_medico),
+fecha_hora datetime, 
+estado varchar(20),
+comentarios varchar(255)
+);
+create table consulta
+(
+no_consulta int not null primary key identity,
+cod_cita int not null foreign key references cita(no_cita),
+id_paciente int not null foreign key references paciente(id_paciente),
+medico int not null foreign key references medico(no_medico),
+fecha_hora datetime,
+examenes varchar(255),
+archivos text,
+diagnostico varchar(255),
+receta_medica varchar(255)
+);
