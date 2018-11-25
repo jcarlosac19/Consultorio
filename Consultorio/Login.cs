@@ -46,12 +46,15 @@ namespace Consultorio
                     usuario selected = consulta.FirstOrDefault();
                     user = txtusuario.Text;
                     role = selected.usuario_role;
-                   
-                    MenuPrincipal menu = new MenuPrincipal(selected.nombres, selected.apellidos, role, user);
-                    this.Hide();
-                    menu.ShowDialog();
 
-                    
+                    /*MenuPrincipal menu = new MenuPrincipal(selected.nombres, selected.apellidos, role, user);
+                    this.Hide();
+                    menu.ShowDialog();*/
+                    PaginaConsultas formConsu = new PaginaConsultas();
+                    this.Hide();
+                    formConsu.ShowDialog();
+
+
                 }
                 else
                 {
