@@ -20,9 +20,6 @@ namespace Consultorio
             label2.Parent = pictureBox1;
             label2.BackColor = Color.Transparent;
         }
-
-
-
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
 
@@ -30,7 +27,6 @@ namespace Consultorio
             {
                 MessageBox.Show("Tiene que completar todos los campos.");
                 return;
-                
             }
 
             String user, role;
@@ -46,12 +42,10 @@ namespace Consultorio
                     usuario selected = consulta.FirstOrDefault();
                     user = txtusuario.Text;
                     role = selected.usuario_role;
-                   
                     MenuPrincipal menu = new MenuPrincipal(selected.nombres, selected.apellidos, role, user);
                     this.Hide();
                     menu.ShowDialog();
 
-                    
                 }
                 else
                 {

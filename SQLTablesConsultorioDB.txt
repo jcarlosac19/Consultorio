@@ -8,6 +8,8 @@ contrasena varchar(255) not null,
 usuario_role varchar(100) not null
 );
 
+insert into usuario values('Administrador','Administrador','admin','admin','administrador');
+
 create table medico
 (
 no_medico int not null primary key identity,
