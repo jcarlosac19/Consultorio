@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtInformacion = new System.Windows.Forms.TextBox();
+            this.txtMedico = new System.Windows.Forms.TextBox();
+            this.cmbSangre = new System.Windows.Forms.ComboBox();
+            this.cmbGenero = new System.Windows.Forms.ComboBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.txtOcupacion = new System.Windows.Forms.TextBox();
             this.txtTelefonos = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
@@ -45,15 +51,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtFecha = new System.Windows.Forms.DateTimePicker();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.cmbGenero = new System.Windows.Forms.ComboBox();
-            this.cmbSangre = new System.Windows.Forms.ComboBox();
-            this.txtMedico = new System.Windows.Forms.TextBox();
-            this.txtInformacion = new System.Windows.Forms.TextBox();
-            this.btnConsultas = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnConsultas = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +87,64 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(609, 279);
             this.panel1.TabIndex = 2;
+            // 
+            // txtInformacion
+            // 
+            this.txtInformacion.Location = new System.Drawing.Point(324, 130);
+            this.txtInformacion.Multiline = true;
+            this.txtInformacion.Name = "txtInformacion";
+            this.txtInformacion.Size = new System.Drawing.Size(261, 120);
+            this.txtInformacion.TabIndex = 22;
+            // 
+            // txtMedico
+            // 
+            this.txtMedico.Location = new System.Drawing.Point(413, 79);
+            this.txtMedico.Name = "txtMedico";
+            this.txtMedico.Size = new System.Drawing.Size(172, 20);
+            this.txtMedico.TabIndex = 21;
+            // 
+            // cmbSangre
+            // 
+            this.cmbSangre.FormattingEnabled = true;
+            this.cmbSangre.Items.AddRange(new object[] {
+            "O negativo",
+            "O positivo",
+            "A negativo",
+            "A positivo",
+            "B negativo",
+            "B positivo",
+            "AB negativo",
+            "AB positivo"});
+            this.cmbSangre.Location = new System.Drawing.Point(413, 52);
+            this.cmbSangre.Name = "cmbSangre";
+            this.cmbSangre.Size = new System.Drawing.Size(172, 21);
+            this.cmbSangre.TabIndex = 20;
+            // 
+            // cmbGenero
+            // 
+            this.cmbGenero.FormattingEnabled = true;
+            this.cmbGenero.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
+            this.cmbGenero.Location = new System.Drawing.Point(413, 25);
+            this.cmbGenero.Name = "cmbGenero";
+            this.cmbGenero.Size = new System.Drawing.Size(172, 21);
+            this.cmbGenero.TabIndex = 19;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(117, 182);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(172, 68);
+            this.txtDireccion.TabIndex = 18;
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.Location = new System.Drawing.Point(117, 156);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(172, 20);
+            this.txtFecha.TabIndex = 17;
             // 
             // txtOcupacion
             // 
@@ -127,9 +186,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(321, 104);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.Size = new System.Drawing.Size(96, 13);
             this.label11.TabIndex = 11;
-            this.label11.Text = "Informacion:";
+            this.label11.Text = "Notas Importantes:";
             // 
             // label10
             // 
@@ -221,117 +280,77 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombres:";
             // 
-            // txtFecha
+            // btnBuscar
             // 
-            this.txtFecha.Location = new System.Drawing.Point(117, 156);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(172, 20);
-            this.txtFecha.TabIndex = 17;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(117, 182);
-            this.txtDireccion.Multiline = true;
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(172, 68);
-            this.txtDireccion.TabIndex = 18;
-            // 
-            // cmbGenero
-            // 
-            this.cmbGenero.FormattingEnabled = true;
-            this.cmbGenero.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino"});
-            this.cmbGenero.Location = new System.Drawing.Point(413, 25);
-            this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(172, 21);
-            this.cmbGenero.TabIndex = 19;
-            // 
-            // cmbSangre
-            // 
-            this.cmbSangre.FormattingEnabled = true;
-            this.cmbSangre.Items.AddRange(new object[] {
-            "O negativo",
-            "O positivo",
-            "A negativo",
-            "A positivo",
-            "B negativo",
-            "B positivo",
-            "AB negativo",
-            "AB positivo"});
-            this.cmbSangre.Location = new System.Drawing.Point(413, 52);
-            this.cmbSangre.Name = "cmbSangre";
-            this.cmbSangre.Size = new System.Drawing.Size(172, 21);
-            this.cmbSangre.TabIndex = 20;
-            // 
-            // txtMedico
-            // 
-            this.txtMedico.Location = new System.Drawing.Point(413, 79);
-            this.txtMedico.Name = "txtMedico";
-            this.txtMedico.Size = new System.Drawing.Size(172, 20);
-            this.txtMedico.TabIndex = 21;
-            // 
-            // txtInformacion
-            // 
-            this.txtInformacion.Location = new System.Drawing.Point(413, 105);
-            this.txtInformacion.Multiline = true;
-            this.txtInformacion.Name = "txtInformacion";
-            this.txtInformacion.Size = new System.Drawing.Size(172, 71);
-            this.txtInformacion.TabIndex = 22;
-            // 
-            // btnConsultas
-            // 
-            this.btnConsultas.Location = new System.Drawing.Point(627, 110);
-            this.btnConsultas.Name = "btnConsultas";
-            this.btnConsultas.Size = new System.Drawing.Size(109, 24);
-            this.btnConsultas.TabIndex = 3;
-            this.btnConsultas.Text = "Consultas";
-            this.btnConsultas.UseVisualStyleBackColor = true;
+            this.btnBuscar.Image = global::Consultorio.Properties.Resources.buscar;
+            this.btnBuscar.Location = new System.Drawing.Point(129, 8);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(110, 53);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "Buscar Paciente";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // btnCitas
             // 
-            this.btnCitas.Location = new System.Drawing.Point(627, 78);
+            this.btnCitas.Image = global::Consultorio.Properties.Resources.citas;
+            this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCitas.Location = new System.Drawing.Point(627, 67);
             this.btnCitas.Name = "btnCitas";
-            this.btnCitas.Size = new System.Drawing.Size(109, 23);
+            this.btnCitas.Size = new System.Drawing.Size(109, 57);
             this.btnCitas.TabIndex = 4;
-            this.btnCitas.Text = "Citas";
+            this.btnCitas.Text = "Citas Programadas";
+            this.btnCitas.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCitas.UseVisualStyleBackColor = true;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
-            // button2
+            // btnConsultas
             // 
-            this.button2.Image = global::Consultorio.Properties.Resources.guardar1;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(129, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 53);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Guardar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnConsultas.Image = global::Consultorio.Properties.Resources.consultas;
+            this.btnConsultas.Location = new System.Drawing.Point(627, 130);
+            this.btnConsultas.Name = "btnConsultas";
+            this.btnConsultas.Size = new System.Drawing.Size(109, 56);
+            this.btnConsultas.TabIndex = 3;
+            this.btnConsultas.Text = "Consultas";
+            this.btnConsultas.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnConsultas.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Image = global::Consultorio.Properties.Resources.guardar1;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnModificar.Location = new System.Drawing.Point(245, 8);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(112, 53);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnAgregar.Image = global::Consultorio.Properties.Resources.agregar1;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAgregar.Location = new System.Drawing.Point(12, 8);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(109, 53);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar Paciente";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Pacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 373);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnCitas);
             this.Controls.Add(this.btnConsultas);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Name = "Pacientes";
             this.Text = "Pacientes";
@@ -344,7 +363,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtOcupacion;
         private System.Windows.Forms.TextBox txtTelefonos;
@@ -370,5 +389,6 @@
         private System.Windows.Forms.DateTimePicker txtFecha;
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnCitas;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

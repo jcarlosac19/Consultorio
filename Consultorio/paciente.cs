@@ -21,7 +21,7 @@ namespace Consultorio
             this.consultas = new HashSet<consulta>();
         }
     
-        public int id_paciente { get; set; }
+        public string id_paciente { get; set; }
         public string nombres { get; set; }
         public string apellidos { get; set; }
         public string telefono { get; set; }

@@ -21,7 +21,7 @@ genero varchar(5)
 
 create table paciente
 (
-id_paciente int not null primary key,
+id_paciente varchar(100) not null primary key,
 nombres varchar(100) not null,
 apellidos varchar(100) not null,
 telefono varchar(50),
@@ -39,7 +39,7 @@ fecha_hora_creacion datetime not null
 create table cita
 (
 no_cita int not null primary key identity,
-id_paciente int not null foreign key references paciente(id_paciente),
+id_paciente varchar(100) not null foreign key references paciente(id_paciente),
 medico int not null foreign key references medico(no_medico),
 fecha_hora datetime, 
 estado varchar(20),
@@ -49,7 +49,7 @@ create table consulta
 (
 no_consulta int not null primary key identity,
 cod_cita int not null foreign key references cita(no_cita),
-id_paciente int not null foreign key references paciente(id_paciente),
+id_paciente varchar(100) not null foreign key references paciente(id_paciente),
 medico int not null foreign key references medico(no_medico),
 fecha_hora datetime,
 examenes varchar(255),
