@@ -186,7 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConsultorioDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ConsultorioDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -199,7 +199,7 @@
       <LastGenOutput>ConsultorioDBModel.cs</LastGenOutput>
     </Content>
     <Content Include="ConsultorioDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>ConsultorioDB.mdf</DependentUpon>
     </Content>
     <None Include="img\buscar.png" />
