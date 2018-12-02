@@ -21,7 +21,7 @@ namespace Consultorio
         }
     
         public int no_cita { get; set; }
-        public int id_paciente { get; set; }
+        public string id_paciente { get; set; }
         public int medico { get; set; }
         public Nullable<System.DateTime> fecha_hora { get; set; }
         public string estado { get; set; }

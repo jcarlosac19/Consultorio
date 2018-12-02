@@ -12,9 +12,23 @@ namespace Consultorio
 {
     public partial class MenuPrincipal : Form
     {
+        String nom, apell, rol, user;
+
         public MenuPrincipal(String nombres, String apellidos, String role, String usuario)
         {
+            this.nom = nombres;
+            this.apell = apellidos;
+            this.rol = role;
+            this.user = usuario;
+
             InitializeComponent();
+        }
+
+        private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pacientes obj = new Pacientes(nom, apell, rol, user);
+
+            obj.ShowDialog();
         }
     }
 }
