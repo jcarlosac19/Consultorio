@@ -42,6 +42,8 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
+            this.dtvUsuarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -166,12 +168,21 @@
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
+            // dtvUsuarios
+            // 
+            this.dtvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvUsuarios.Location = new System.Drawing.Point(377, 81);
+            this.dtvUsuarios.Name = "dtvUsuarios";
+            this.dtvUsuarios.Size = new System.Drawing.Size(338, 252);
+            this.dtvUsuarios.TabIndex = 15;
+            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(358, 362);
+            this.ClientSize = new System.Drawing.Size(727, 374);
+            this.Controls.Add(this.dtvUsuarios);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnLimpiar);
@@ -188,6 +199,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Users";
             this.Text = "Users";
+            ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +221,6 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.DataGridView dtvUsuarios;
     }
 }

@@ -15,7 +15,31 @@ namespace Consultorio
         public Users()
         {
             InitializeComponent();
+            refrescar();
         }
+
+        void refrescar()
+        {
+            using (var db = new ConsultorioDBEntities())
+            {
+                //LINQ
+                var consulta = from s in db.usuarios
+                                   //where s.carrera == "Informatica"
+                                   //orderby s.nombres ascending
+                               select new
+                               {
+                                   No_Usuario = s.no_usuario,
+                                   Nombres = s.nombres,
+                                   Apellidos = s.apellidos,
+                                   Usuario = s.usuario1,
+                                   Contrasena = s.contrasena,
+                                   Role = s.usuario_role
+
+                               };
+                dtvUsuarios.DataSource = consulta.ToList();
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -35,6 +59,7 @@ namespace Consultorio
                 if (tbNombres.Text == "" || tbApellidos.Text == "" || tbPassword.Text == "" || tbUsuario.Text == "" || tbRol.Text == "")
                 {
                     MessageBox.Show("Ingrese la informacion");
+                    return;
                 }
                 //Guarda un nuevo usuario en la DB
                 usuario User = new usuario();
@@ -50,6 +75,7 @@ namespace Consultorio
                 if (filasafectadas > 0)
                 {
                     MessageBox.Show("Se ha agregado un nuevo usuario");
+                    refrescar();
                 }
                 else
                 {

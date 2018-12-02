@@ -14,7 +14,22 @@ namespace Consultorio
     {
         String nom, apell, rol, user;
 
-       
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Users obj = new Users();
+
+            obj.ShowDialog();
+        }
+
+        private void cerrarSessionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+
+            Login log = new Login();
+
+            log.ShowDialog();
+
+        }
 
         public MenuPrincipal(String nombres, String apellidos, String role, String usuario)
         {
@@ -33,11 +48,8 @@ namespace Consultorio
             obj.ShowDialog();
         }
 
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Users obj = new Users();
+    
 
-            obj.ShowDialog();
-        }
+
     }
 }
