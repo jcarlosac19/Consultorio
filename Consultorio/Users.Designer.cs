@@ -156,7 +156,6 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.Image = global::Consultorio.Properties.Resources.Users;
             this.btnCrear.Location = new System.Drawing.Point(134, 299);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 34);

@@ -16,7 +16,7 @@ namespace Consultorio
     public partial class ConsultorioDBEntities : DbContext
     {
         public ConsultorioDBEntities()
-            : base("name=ConsultorioDBEntities1")
+            : base("name=ConsultorioDBEntities")
         {
         }
     

@@ -49,6 +49,8 @@ namespace Consultorio
                 p.usuario_creador = user;
                 p.fecha_hora_creacion = new DateTime();
                 db.pacientes.Add(p);
+                db.SaveChanges();
+
             };
 
         }

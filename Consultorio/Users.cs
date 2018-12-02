@@ -32,26 +32,33 @@ namespace Consultorio
             using (var db = new ConsultorioDBEntities())
             {
                 //Validando que los campos no queden vacios
-                if (tbNombres.Text == "" || tbApellidos.Text=="" || tbPassword.Text=="" || tbUsuario.Text=="" || tbRol.Text=="")
+                if (tbNombres.Text == "" || tbApellidos.Text == "" || tbPassword.Text == "" || tbUsuario.Text == "" || tbRol.Text == "")
                 {
                     MessageBox.Show("Ingrese la informacion");
                 }
                 //Guarda un nuevo usuario en la DB
                 usuario User = new usuario();
-                User.no_usuario = Convert.ToInt32(tbUsuario.Text);
+
                 User.nombres = tbNombres.Text;
                 User.apellidos = tbApellidos.Text;
                 User.contrasena = tbPassword.Text;
+                User.usuario1 = tbUsuario.Text;
                 User.usuario_role = tbRol.Text;
                 db.usuarios.Add(User);
-                int filasAfectadas = db.SaveChanges();
-                if (filasAfectadas > 0)
+                int filasafectadas = db.SaveChanges();
+
+                if (filasafectadas > 0)
                 {
-                    MessageBox.Show("Se agrego un usuario nuevo");
+                    MessageBox.Show("Se ha agregado un nuevo usuario");
                 }
                 else
-                    MessageBox.Show("No se pudo agregar");
+                {
+                    MessageBox.Show("No se ha podido agregar el usuario");
+                }
+
             }
         }
     }
 }
+
+

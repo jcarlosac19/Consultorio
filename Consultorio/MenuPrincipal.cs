@@ -14,6 +14,8 @@ namespace Consultorio
     {
         String nom, apell, rol, user;
 
+       
+
         public MenuPrincipal(String nombres, String apellidos, String role, String usuario)
         {
             this.nom = nombres;
@@ -27,6 +29,13 @@ namespace Consultorio
         private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Pacientes obj = new Pacientes(nom, apell, rol, user);
+
+            obj.ShowDialog();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Users obj = new Users();
 
             obj.ShowDialog();
         }
