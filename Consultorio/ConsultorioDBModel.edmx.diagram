@@ -4,20 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ddd508ee542e4d08a33f7e787d2821cc" Name="Diagram1">
-        <EntityTypeShape EntityType="ConsultorioDBModel.cita" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultorioDBModel.consulta" Width="1.5" PointX="10.5" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultorioDBModel.medico" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultorioDBModel.paciente" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultorioDBModel.usuario" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
-        <AssociationConnector Association="ConsultorioDBModel.FK__cita__id_pacient__73BA3083" ManuallyRouted="false" />
+      <Diagram DiagramId="36fa8bd550664d04ace3c56f18307d3b" Name="Diagram1">
+        <EntityTypeShape EntityType="ConsultorioDBModel.cita" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultorioDBModel.consulta" Width="1.5" PointX="7.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultorioDBModel.medico" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultorioDBModel.paciente" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultorioDBModel.usuario" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
         <AssociationConnector Association="ConsultorioDBModel.FK__cita__medico__74AE54BC" ManuallyRouted="false" />
         <AssociationConnector Association="ConsultorioDBModel.FK__consulta__cod_ci__778AC167" ManuallyRouted="false" />
-        <AssociationConnector Association="ConsultorioDBModel.FK__consulta__id_pac__787EE5A0" ManuallyRouted="false" />
         <AssociationConnector Association="ConsultorioDBModel.FK__consulta__medico__797309D9" ManuallyRouted="false" />
         <AssociationConnector Association="ConsultorioDBModel.FK__medico__usuario___5165187F" ManuallyRouted="false" />
-        <AssociationConnector Association="ConsultorioDBModel.FK__paciente__no_med__6FE99F9F" ManuallyRouted="false" />
-        <AssociationConnector Association="ConsultorioDBModel.FK__paciente__usuari__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="ConsultorioDBModel.FK__paciente__no_med__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="ConsultorioDBModel.FK__paciente__usuari__03F0984C" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

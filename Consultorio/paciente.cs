@@ -14,13 +14,7 @@ namespace Consultorio
     
     public partial class paciente
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public paciente()
-        {
-            this.citas = new HashSet<cita>();
-            this.consultas = new HashSet<consulta>();
-        }
-    
+        public int no_paciente { get; set; }
         public string id_paciente { get; set; }
         public string nombres { get; set; }
         public string apellidos { get; set; }
@@ -35,10 +29,6 @@ namespace Consultorio
         public string usuario_creador { get; set; }
         public System.DateTime fecha_hora_creacion { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<cita> citas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<consulta> consultas { get; set; }
         public virtual medico medico { get; set; }
         public virtual usuario usuario { get; set; }
     }

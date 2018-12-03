@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtInformacion = new System.Windows.Forms.TextBox();
-            this.txtMedico = new System.Windows.Forms.TextBox();
+            this.txtMedico = new System.Windows.Forms.ComboBox();
             this.cmbSangre = new System.Windows.Forms.ComboBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -90,21 +90,24 @@
             // 
             // txtInformacion
             // 
-            this.txtInformacion.Location = new System.Drawing.Point(324, 130);
+            this.txtInformacion.Location = new System.Drawing.Point(324, 120);
             this.txtInformacion.Multiline = true;
             this.txtInformacion.Name = "txtInformacion";
-            this.txtInformacion.Size = new System.Drawing.Size(261, 120);
+            this.txtInformacion.Size = new System.Drawing.Size(261, 130);
             this.txtInformacion.TabIndex = 22;
             // 
             // txtMedico
             // 
-            this.txtMedico.Location = new System.Drawing.Point(413, 79);
+            this.txtMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtMedico.FormattingEnabled = true;
+            this.txtMedico.Location = new System.Drawing.Point(413, 82);
             this.txtMedico.Name = "txtMedico";
-            this.txtMedico.Size = new System.Drawing.Size(172, 20);
+            this.txtMedico.Size = new System.Drawing.Size(172, 21);
             this.txtMedico.TabIndex = 21;
             // 
             // cmbSangre
             // 
+            this.cmbSangre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSangre.FormattingEnabled = true;
             this.cmbSangre.Items.AddRange(new object[] {
             "O negativo",
@@ -122,6 +125,7 @@
             // 
             // cmbGenero
             // 
+            this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Items.AddRange(new object[] {
             "Masculino",
@@ -193,7 +197,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(321, 78);
+            this.label10.Location = new System.Drawing.Point(321, 83);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 13);
             this.label10.TabIndex = 10;
@@ -345,7 +349,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 373);
+            this.ClientSize = new System.Drawing.Size(748, 358);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnCitas);
             this.Controls.Add(this.btnConsultas);
@@ -381,8 +385,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtInformacion;
-        private System.Windows.Forms.TextBox txtMedico;
         private System.Windows.Forms.ComboBox cmbSangre;
         private System.Windows.Forms.ComboBox cmbGenero;
         private System.Windows.Forms.TextBox txtDireccion;
@@ -390,5 +392,7 @@
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnCitas;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtInformacion;
+        private System.Windows.Forms.ComboBox txtMedico;
     }
 }
