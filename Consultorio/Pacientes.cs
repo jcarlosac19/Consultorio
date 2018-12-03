@@ -15,10 +15,8 @@ namespace Consultorio
     {
         string nom, apell, rol, user;
 
-        public Pacientes(string nombres, string apellidos, string role, string usuario)
+        public Pacientes(string role, string usuario)
         {
-            this.nom = nombres;
-            this.apell = apellidos;
             this.rol = role;
             this.user = usuario;
 
@@ -40,6 +38,7 @@ namespace Consultorio
             }
 
             txtMedico.DataSource = arregloMedico;
+            txtMedico.Text = null;
         }
 
         bool revisar_blancos()
@@ -61,6 +60,143 @@ namespace Consultorio
                 return false;
 
             
+        }
+        bool existe()
+        {
+            using (var db = new ConsultorioDBEntities())
+            {
+                var consulta = from s in db.pacientes
+                               where s.id_paciente == txtIDPaciente.Text
+                               select s;
+                if (consulta.ToList().Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                    }
+                }
+            }
+
+        public void mostrarDatosActualFila()
+        {
+            cmbUsuario.Text = this.dtvMedicos.CurrentRow.Cells["Usuario"].Value.ToString();
+            txtEspecialidad.Text = this.dtvMedicos.CurrentRow.Cells["Especialidad"].Value.ToString();
+            dtpFechaNacimiento.Value = DateTime.Parse(this.dtvMedicos.CurrentRow.Cells["Nacimiento"].Value.ToString());
+            cmbGenero.Text = this.dtvMedicos.CurrentRow.Cells["Genero"].Value.ToString();
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            using (var db = new ConsultorioDBEntities())
+            {
+                var consulta = from s in db.pacientes
+                               where s.id_paciente == txtIDPaciente.Text
+                               select s;
+                if (consulta.ToList().Count > 0)
+                {
+                    paciente p = new paciente();
+                    p = consulta.FirstOrDefault();
+
+                    txtNombres.Text = p.nombres;
+                    txtApellidos.Text = p.apellidos;
+                    txtTelefonos.Text = p.telefono;
+                    cmbSangre.Text = p.tipo_sangre;
+                    cmbGenero.Text = p.genero;
+                    txtOcupacion.Text = p.ocupacion;
+                    txtFecha.Text = p.fecha_nacimiento.ToString();
+                    txtDireccion.Text = p.direccion;
+                    txtMedico.Text = p.no_medico.ToString();
+                    txtInformacion.Text = p.informacion;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo encontrar el paciente.");
+                }
+            }
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtIDPaciente.Clear();
+            txtNombres.Clear();
+            txtApellidos.Clear();
+            txtTelefonos.Clear();
+            cmbSangre.Text = null;
+            cmbGenero.Text = null;
+            txtOcupacion.Clear();
+            txtFecha.Text = null;
+            txtDireccion.Clear();
+            txtMedico.Text = null;
+            txtInformacion.Clear();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (revisar_blancos() == true)
+                {
+                    MessageBox.Show("No se permiten campos en blanco");
+                    return;
+                }
+
+                using (var db = new ConsultorioDBEntities())
+                {
+                    var consulta = from s in db.pacientes
+                                   where s.id_paciente == txtIDPaciente.Text
+                                   select s;
+                    if (consulta.ToList().Count > 0)
+                    {
+                        paciente p = new paciente();
+                        p = consulta.FirstOrDefault();
+
+                        p.id_paciente = txtIDPaciente.Text;
+                        p.nombres = txtNombres.Text;
+                        p.apellidos = txtApellidos.Text;
+                        p.telefono = txtTelefonos.Text;
+                        p.tipo_sangre = cmbSangre.Text;
+                        p.genero = cmbGenero.Text;
+                        p.ocupacion = txtOcupacion.Text;
+                        p.fecha_nacimiento = txtFecha.Value;
+                        p.direccion = txtDireccion.Text;
+                        p.no_medico = Int32.Parse(txtMedico.Text);
+                        p.informacion = txtInformacion.Text;
+
+                        int filasAfectadas = db.SaveChanges();
+
+                        if (filasAfectadas > 0)
+                        {
+
+                            MessageBox.Show("Alumno modificado exitosamente.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo modificar.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo encontrar el paciente.");
+                    }
+                }
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnListaPacientes_Click(object sender, EventArgs e)
+        {
+            ListaPacientes lp = new ListaPacientes();
+
+            lp.ShowDialog();
         }
 
         private void btnCitas_Click(object sender, EventArgs e)
@@ -87,6 +223,11 @@ namespace Consultorio
         {
             try
             {
+                if (existe())
+                {
+                    MessageBox.Show("El paciente ya existe, no puede ser agregado.");
+                    return;
+                }
 
                 if (revisar_blancos() == true)
                 {
@@ -122,6 +263,9 @@ namespace Consultorio
                     if (filasAfectadas > 0)
                     {
                         MessageBox.Show("Se registro el paciente exitosamente.");
+                        ListaPacientes lp = new ListaPacientes();
+                        lp.ShowDialog();
+
                         limpiar();
                     }
                     else

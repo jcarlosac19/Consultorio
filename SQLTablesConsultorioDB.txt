@@ -21,12 +21,13 @@ genero varchar(5)
 
 create table paciente
 (
-id_paciente varchar(100) not null primary key,
+no_paciente int not null primary key identity,
+id_paciente varchar(100) not null,
 nombres varchar(100) not null,
 apellidos varchar(100) not null,
 telefono varchar(50),
-tipo_sangre varchar(5),
-genero varchar(10),
+tipo_sangre varchar(50),
+genero varchar(50),
 ocupacion varchar(255),
 fecha_nacimiento date,
 direccion varchar(255),

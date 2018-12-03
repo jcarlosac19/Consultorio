@@ -26,6 +26,13 @@ namespace Consultorio
             Application.Exit();
         }
 
+        private void medicosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MedicosF med = new MedicosF();
+
+            med.ShowDialog();
+        }
+
         private void cerrarSessionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -36,7 +43,7 @@ namespace Consultorio
 
         }
 
-        public MenuPrincipal(String nombres, String apellidos, String role, String usuario)
+        public MenuPrincipal(string nombres, string apellidos, string role, string usuario)
         {
             this.nom = nombres;
             this.apell = apellidos;
@@ -48,7 +55,7 @@ namespace Consultorio
 
         private void pacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pacientes obj = new Pacientes(nom, apell, rol, user);
+            Pacientes obj = new Pacientes(rol, user);
 
             obj.ShowDialog();
         }

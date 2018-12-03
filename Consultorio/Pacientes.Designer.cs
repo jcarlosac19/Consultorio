@@ -51,6 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnListaPacientes = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
             this.btnConsultas = new System.Windows.Forms.Button();
@@ -284,6 +286,30 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombres:";
             // 
+            // btnListaPacientes
+            // 
+            this.btnListaPacientes.Image = global::Consultorio.Properties.Resources.lista;
+            this.btnListaPacientes.Location = new System.Drawing.Point(363, 8);
+            this.btnListaPacientes.Name = "btnListaPacientes";
+            this.btnListaPacientes.Size = new System.Drawing.Size(111, 53);
+            this.btnListaPacientes.TabIndex = 7;
+            this.btnListaPacientes.Text = "Lista de Pacientes";
+            this.btnListaPacientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnListaPacientes.UseVisualStyleBackColor = true;
+            this.btnListaPacientes.Click += new System.EventHandler(this.btnListaPacientes_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Image = global::Consultorio.Properties.Resources.limpiar;
+            this.btnLimpiar.Location = new System.Drawing.Point(627, 192);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(109, 51);
+            this.btnLimpiar.TabIndex = 6;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Image = global::Consultorio.Properties.Resources.buscar;
@@ -294,6 +320,7 @@
             this.btnBuscar.Text = "Buscar Paciente";
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnCitas
             // 
@@ -330,6 +357,7 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -350,6 +378,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 358);
+            this.Controls.Add(this.btnListaPacientes);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnCitas);
             this.Controls.Add(this.btnConsultas);
@@ -394,5 +424,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtInformacion;
         private System.Windows.Forms.ComboBox txtMedico;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnListaPacientes;
     }
 }
