@@ -23,13 +23,13 @@ namespace Consultorio
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
 
-            if (String.IsNullOrEmpty(txtusuario.Text) || String.IsNullOrEmpty(txtcontrasena.Text))
+            if (string.IsNullOrEmpty(txtusuario.Text) || string.IsNullOrEmpty(txtcontrasena.Text))
             {
                 MessageBox.Show("Tiene que completar todos los campos.");
                 return;
             }
 
-            String user, role;
+            string user, role;
 
             using (var db = new ConsultorioDBEntities())
             {

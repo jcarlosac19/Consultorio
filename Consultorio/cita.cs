@@ -27,7 +27,6 @@ namespace Consultorio
         public string estado { get; set; }
         public string comentarios { get; set; }
     
-        public virtual paciente paciente { get; set; }
         public virtual medico medico1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<consulta> consultas { get; set; }

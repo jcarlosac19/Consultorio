@@ -77,20 +77,20 @@
             // pacientesToolStripMenuItem1
             // 
             this.pacientesToolStripMenuItem1.Name = "pacientesToolStripMenuItem1";
-            this.pacientesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pacientesToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.pacientesToolStripMenuItem1.Text = "Pacientes";
             this.pacientesToolStripMenuItem1.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
             // medicosToolStripMenuItem
             // 
             this.medicosToolStripMenuItem.Name = "medicosToolStripMenuItem";
-            this.medicosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.medicosToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.medicosToolStripMenuItem.Text = "Medicos";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -102,6 +102,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "MenuPrincipal";
             this.Text = "MenuPrincipal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuPrincipal_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

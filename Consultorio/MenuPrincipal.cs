@@ -20,6 +20,11 @@ namespace Consultorio
             obj.ShowDialog();
         }
 
+        private void MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void cerrarSessionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Dispose();

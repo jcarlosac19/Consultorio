@@ -25,7 +25,6 @@ namespace Consultorio
         public string receta_medica { get; set; }
     
         public virtual cita cita { get; set; }
-        public virtual paciente paciente { get; set; }
         public virtual medico medico1 { get; set; }
     }
 }
