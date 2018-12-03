@@ -16,8 +16,7 @@ namespace Consultorio
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Users obj = new Users();
-
+            MostrarCuentas obj = new MostrarCuentas();
             obj.ShowDialog();
         }
 
@@ -47,9 +46,5 @@ namespace Consultorio
 
             obj.ShowDialog();
         }
-
-    
-
-
     }
 }

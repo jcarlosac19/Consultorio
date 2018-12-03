@@ -39,11 +39,9 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbRol = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
-            this.dtvUsuarios = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).BeginInit();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -116,12 +114,17 @@
             // 
             this.tbPassword.Location = new System.Drawing.Point(149, 199);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(100, 20);
             this.tbPassword.TabIndex = 9;
             // 
             // tbRol
             // 
             this.tbRol.FormattingEnabled = true;
+            this.tbRol.Items.AddRange(new object[] {
+            "Medico",
+            "Recepcionista",
+            "Administrador"});
             this.tbRol.Location = new System.Drawing.Point(149, 236);
             this.tbRol.Name = "tbRol";
             this.tbRol.Size = new System.Drawing.Size(121, 21);
@@ -137,30 +140,24 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Crear nuevo usuario";
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(51, 299);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 34);
-            this.btnLimpiar.TabIndex = 12;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(215, 299);
+            this.btnVolver.Image = global::Consultorio.Properties.Resources.Return;
+            this.btnVolver.Location = new System.Drawing.Point(227, 299);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 34);
             this.btnVolver.TabIndex = 14;
             this.btnVolver.Text = "Volver";
+            this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnCrear
             // 
+            this.btnCrear.Image = global::Consultorio.Properties.Resources.Users;
             this.btnCrear.Location = new System.Drawing.Point(134, 299);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(75, 34);
+            this.btnCrear.Size = new System.Drawing.Size(87, 34);
             this.btnCrear.TabIndex = 13;
             this.btnCrear.Text = "Crear";
             this.btnCrear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -168,21 +165,25 @@
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // dtvUsuarios
+            // btnLimpiar
             // 
-            this.dtvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvUsuarios.Location = new System.Drawing.Point(377, 81);
-            this.dtvUsuarios.Name = "dtvUsuarios";
-            this.dtvUsuarios.Size = new System.Drawing.Size(338, 252);
-            this.dtvUsuarios.TabIndex = 15;
+            this.btnLimpiar.Image = global::Consultorio.Properties.Resources.Limpiar;
+            this.btnLimpiar.Location = new System.Drawing.Point(42, 299);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(84, 34);
+            this.btnLimpiar.TabIndex = 12;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.button1_Click);
             // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(727, 374);
-            this.Controls.Add(this.dtvUsuarios);
+            this.ClientSize = new System.Drawing.Size(348, 374);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.btnLimpiar);
@@ -199,7 +200,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Users";
             this.Text = "Users";
-            ((System.ComponentModel.ISupportInitialize)(this.dtvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +221,5 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.DataGridView dtvUsuarios;
     }
 }
